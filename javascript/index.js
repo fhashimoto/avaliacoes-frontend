@@ -33,6 +33,16 @@ function addMarker(marker) {
         icon: customIcon,
         title: marker.name
     });
+    //Mudar cor do ícone 
+    google.maps.event.addListener(marker,'click',function(){
+        customIcon.fillColor = "#FFF";
+        marker.setIcon(customIcon);
+    })
+    // Voltar cor do ícone
+    google.maps.event.addListener(map,'click',function(){
+        customIcon.fillColor= "#F7B217";
+        marker.setIcon(customIcon);
+    });
 }
 
 function initMap() {
