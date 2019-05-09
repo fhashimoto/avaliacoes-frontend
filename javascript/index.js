@@ -1,5 +1,3 @@
-console.log('Yet another Hello world');
-
 var map = null;
 
 placesOfInterest = [
@@ -17,7 +15,7 @@ placesOfInterest = [
     { name: 'Rei das Batidas', lat: -23.570613, lng: -46.705977 }
 ];
 
-const customIcon = {
+let customIcon = {
     path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
     fillColor: '#F7B217',
     fillOpacity: 0.98,
@@ -27,6 +25,7 @@ const customIcon = {
 };
 
 function addMarker(marker) {
+    var nome = new google.maps.InfoWindow();
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(marker.lat, marker.lng),
@@ -37,11 +36,16 @@ function addMarker(marker) {
     google.maps.event.addListener(marker,'click',function(){
         customIcon.fillColor = "#FFF";
         marker.setIcon(customIcon);
+        // Abrindo a info
+        nome.setContent(`<b>${marker.title}</b>`);
+        nome.open(map, marker);
     })
     // Voltar cor do ícone
     google.maps.event.addListener(map,'click',function(){
         customIcon.fillColor= "#F7B217";
         marker.setIcon(customIcon);
+        // Fechando a info
+        nome.close();
     });
 }
 
@@ -63,9 +67,9 @@ function initMap() {
 
     };
 
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);    
 
-    // Adicionando todos os marcadores
+    //Adicionando o primeiro marcador como exemplo
     placesOfInterest.forEach(place => {
         addMarker(place)
     });
