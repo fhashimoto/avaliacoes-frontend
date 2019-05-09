@@ -47,6 +47,11 @@ function addMarker(marker) {
         // Fechando a info
         nome.close();
     });
+    // Voltar cor ao fechar
+    google.maps.event.addListener(nome,'closeclick',function(){
+        customIcon.fillColor= "#F7B217";
+        marker.setIcon(customIcon);
+    })
 }
 
 function initMap() {
