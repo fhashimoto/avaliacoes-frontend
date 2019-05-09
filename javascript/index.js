@@ -1,4 +1,6 @@
-var map = null;
+let map = null,
+    lastWindow=null,
+    lastMarker=null;
 
 placesOfInterest = [
     { name: 'Charme da paulista', lat: -23.562172, lng: -46.655794 },
@@ -25,25 +27,44 @@ let customIcon = {
 };
 
 function addMarker(marker) {
-    var nome = new google.maps.InfoWindow();
+
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(marker.lat, marker.lng),
         icon: customIcon,
         title: marker.name
     });
+
+    var nome = new google.maps.InfoWindow({ content: `<b>${marker.title}</b>` });
+    
     //Mudar cor do ícone 
     google.maps.event.addListener(marker,'click',function(){
+
+        // Se existir uma infowindow antes, ela será fechada e voltar a cor
+        if (lastWindow){
+            lastWindow.close();
+            customIcon.fillColor= "#F7B217";
+            lastMarker.setIcon(customIcon);
+        }
+
+        // Deixando o ícone branco
         customIcon.fillColor = "#FFF";
         marker.setIcon(customIcon);
+
         // Abrindo a info
-        nome.setContent(`<b>${marker.title}</b>`);
         nome.open(map, marker);
+
+        // Setando o último window e marker gravados
+        lastWindow = nome;
+        lastMarker = marker;
     })
     // Voltar cor do ícone
     google.maps.event.addListener(map,'click',function(){
+
+        // Cor original do ícone
         customIcon.fillColor= "#F7B217";
         marker.setIcon(customIcon);
+
         // Fechando a info
         nome.close();
     });
