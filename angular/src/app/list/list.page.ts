@@ -12,9 +12,9 @@ export class ListPage {
   // Na inicialização do Angular, o arquivo importado legends é atribuído a variável legends do escopo da classe listpage
 
   constructor(private editpage : EditPage){}
-  public legends: Array<string> = [];
+  public legends: Array<string> = this.editpage.legendsNew;
 
-  ngOnInit(){
+  ngOnChanges(){
     this.editpage.atual.subscribe(legendsNew => this.legends = legendsNew);
     console.log(this.legends);
   }

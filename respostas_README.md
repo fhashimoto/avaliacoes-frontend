@@ -29,7 +29,7 @@ R: O carregamento da página está demorado, no meu navegador ela demora 3.76s. 
 ## Angular Questão 4:
 
 ### a) Para que serve o método ngOnInit, quais são os outros métodos do Angular lifecycle hooks e para que servem?
-R:
+R: 
 
 ### b) Neste projeto, estamos usando os componentes gráficos da versão 4 da biblioteca gráfica do Ionic. Nesta versão, os componentes são Web Components. Explique o que são Web Components e explique quais são as vantagens deles.
 R: 
