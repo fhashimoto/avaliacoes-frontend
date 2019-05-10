@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { legends } from '../names/nameslist';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
 export class ListPage {
   legends: Array<string> = [];
 
+  // Na inicialização do Angular, o arquivo importado legends é atribuído a variável legends do excopo da classe listpage
   ngOnInit() {
-
+    this.legends = legends;
   }
 }
