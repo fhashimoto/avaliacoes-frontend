@@ -12,12 +12,17 @@
           <ion-list-header>
             <ion-label>List of Names</ion-label>
           </ion-list-header>
+
+          <ion-reorder-group disabled="false">
           <!-- Iterando o array legends, que repetirá a tag ion-label, e setando a variável name para cada um dos itens do array -->
-          <ion-item lines="full" *ngFor="let name of legends">
+          <ion-item (alterado)="alterando($event)" lines="full" *ngFor="let name of legends">
             <ion-label>
               {{name}}
             </ion-label>
+            <ion-reorder></ion-reorder>
           </ion-item>
+          </ion-reorder-group>
+
         </ion-list>
       </ion-col>
     </ion-row>

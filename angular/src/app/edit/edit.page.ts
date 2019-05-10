@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { legends } from '../names/nameslist';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-edit',
@@ -9,10 +10,12 @@ import { legends } from '../names/nameslist';
 export class EditPage {
   legends: string[][];
   nameInput: string;
+  public legendsNew: Array<string> = legends;
 
-  constructor() {
-    
-  }
+  public origem = new BehaviorSubject(this.legendsNew);
+  atual = this.origem.asObservable();
+
+  constructor() {}
 
   ngOnInit(){
     // Criando um novo array com o  conteúdo do botão "linkado" com cada nome
@@ -22,11 +25,13 @@ export class EditPage {
   onEdit(item) {
     // Toggle de string
     item[1] = (item[1]=='edit') ? 'save' : 'edit';
-
     // Quando clicar Save e voltar para edit, o nome é salvo
     if (item[1]==='edit' && this.nameInput){
       item[0] = this.nameInput;
     }
+    this.legendsNew = this.legends.map(val=>val[0]);
+
+    this.origem.next(this.legendsNew);    
   }
 
   onChange(e){

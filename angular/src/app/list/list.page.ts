@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
-import { legends } from '../names/nameslist';
+import { Component, SimpleChanges, Input } from '@angular/core';
+import {EditPage} from '../edit/edit.page';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-list',
   templateUrl: 'list.page.html',
-  styleUrls: ['list.page.scss']
+  styleUrls: ['list.page.scss'],
+  providers: [EditPage]
 })
 export class ListPage {
-  legends: Array<string> = [];
+  // Na inicialização do Angular, o arquivo importado legends é atribuído a variável legends do escopo da classe listpage
 
-  // Na inicialização do Angular, o arquivo importado legends é atribuído a variável legends do excopo da classe listpage
-  ngOnInit() {
-    this.legends = legends;
+  constructor(private editpage : EditPage){}
+  public legends: Array<string> = [];
+
+  ngOnInit(){
+    this.editpage.atual.subscribe(legendsNew => this.legends = legendsNew);
+    console.log(this.legends);
   }
+
 }
