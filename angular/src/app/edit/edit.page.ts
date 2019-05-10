@@ -24,7 +24,7 @@ export class EditPage {
     item[1] = (item[1]=='edit') ? 'save' : 'edit';
 
     // Quando clicar Save e voltar para edit, o nome é salvo
-    if (item[1]==='edit'){
+    if (item[1]==='edit' && this.nameInput){
       item[0] = this.nameInput;
     }
   }
