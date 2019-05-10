@@ -14,6 +14,34 @@
           <ion-list-header>
             <ion-label>List of Names</ion-label>
           </ion-list-header>
+
+            <ion-item lines="full" *ngFor="let name of legends">
+              <!-- Começo default e demonstração da lista -->
+              <ion-label *ngIf="name[1]=='edit'">
+                {{name[0]}}
+              </ion-label>
+              <!-- Quando clicado edit, ele inicia o input com o valor antigo -->
+              <!-- Com mudança no input é chamado a função onChange, com event de parametro -->
+              <ion-input
+                color="danger"
+                *ngIf="name[1]=='save'" 
+                value="{{name[0]}}"
+                (ionChange)="onChange($event)">
+              </ion-input>
+
+              <!-- Event listener de click no botão e também encapsulado para deixar a função de fechar para o ícone -->
+              <ion-item (click)="onEdit(name)">
+                <ion-icon *ngIf="name[1]=='save'" name="close"></ion-icon>
+                <ion-button 
+                  style="color:#92b992; box-shadow: 1px .5px #a6a6a6"
+                  fill="outline"
+                  size="default">
+                  {{name[1]}}
+                </ion-button>
+              </ion-item>
+              
+            </ion-item>
+
         </ion-list>
       </ion-col>
     </ion-row>
