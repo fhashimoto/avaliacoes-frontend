@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoadingControlle } from '@ionic/angular';
+// Arrumando typo de import
+import { LoadingController } from '@ionic/angular';
 import * as _ from 'lodash';
 
 @Component({
@@ -26,7 +27,8 @@ export class HomePage {
 
     setTimeout( () => {
       try {
-        dismissLoading();
+        // Adicionado o this. pois a função está no escopo da classe
+        this.dismissLoading();
       } catch(err) {
         console.error(err);
         alert('Error dismissing loader');
