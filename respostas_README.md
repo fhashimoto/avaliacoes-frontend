@@ -50,10 +50,10 @@ R: É uma tag que serve para fazer a iteração da tags e dos seus conteúdos.
 R: É uma declaração de variável do typescript, tipado.
 
 ### e) Como funciona a api Events do Ionic? Para que serve?
-R: 
+R: É um sistema onde conseguimos transmitir dados entre as páginas, em um sistema de listener e subscriber, onde um irá passar os dados e o outro irá receber.
 
 ### f) O que é flexbox? Para que servem as tags ion-grid, ion-row, ion-col? Quais as vantagens em utilizálas?
-R: É um layout responsivo de caixas do CSS. 
+R: É um layout responsivo de caixas do CSS. Essas tags são a representação do Ionic para o flexbox, setados em mobile-first, grid é todo o corpo que irá receber os containers, que são separados em filerias (rows) e estas separadas em colunas(col). Com elas nós temos uma divisão clara e responsiva dos containers.
 
 ## Angular Questão 6:
 
