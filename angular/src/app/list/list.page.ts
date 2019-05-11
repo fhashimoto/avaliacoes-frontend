@@ -1,22 +1,23 @@
-import { Component, SimpleChanges, Input } from '@angular/core';
-import {EditPage} from '../edit/edit.page';
-import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+import { legends } from '../names/nameslist';
+import { Events } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
   templateUrl: 'list.page.html',
-  styleUrls: ['list.page.scss'],
-  providers: [EditPage]
+  styleUrls: ['list.page.scss']
 })
 export class ListPage {
+  constructor(public events1 : Events){
+    this.events1.subscribe('lista',(data)=>{
+      this.legends = data;
+    })
+  }
   // Na inicialização do Angular, o arquivo importado legends é atribuído a variável legends do escopo da classe listpage
+  legends: Array<string> = [];
 
-  constructor(private editpage : EditPage){}
-  public legends: Array<string> = this.editpage.legendsNew;
-
-  ngOnChanges(){
-    this.editpage.atual.subscribe(legendsNew => this.legends = legendsNew);
-    console.log(this.legends);
+  ngOnInit(){
+    this.legends = legends;
   }
 
 }

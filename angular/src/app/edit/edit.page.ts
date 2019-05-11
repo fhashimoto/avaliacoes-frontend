@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { legends } from '../names/nameslist';
-import { BehaviorSubject } from 'rxjs';
+import { Events } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit',
   templateUrl: 'edit.page.html',
   styleUrls: ['edit.page.scss']
 })
+
 export class EditPage {
   legends: string[][];
   nameInput: string;
-  public legendsNew: Array<string> = legends;
+  legendsNew: Array<string> = legends;
 
-  public origem = new BehaviorSubject(this.legendsNew);
-  atual = this.origem.asObservable();
-
-  constructor() {}
+  constructor(public events2 : Events) {}
 
   ngOnInit(){
     // Criando um novo array com o  conteúdo do botão "linkado" com cada nome
@@ -30,8 +28,7 @@ export class EditPage {
       item[0] = this.nameInput;
     }
     this.legendsNew = this.legends.map(val=>val[0]);
-
-    this.origem.next(this.legendsNew);    
+    this.events2.publish('lista',this.legendsNew)
   }
 
   onChange(e){
