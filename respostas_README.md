@@ -29,31 +29,24 @@ R: O carregamento da página está demorado, no meu navegador ela demora 3.76s. 
 ## Angular Questão 4:
 
 ### a) Para que serve o método ngOnInit, quais são os outros métodos do Angular lifecycle hooks e para que servem?
-R: Ele é carregado para concluir a inicialização do componente, após o Angular setar as propriedades e depois da primeira chamada de ngOnChanges(), é chamado apenas uma vez.
-  ngOnChanges: Ele recebe um objeto SimpleChanges que irá rastrear mudanças e com isso esse hook será chamado.
-  ngDoCheck: Detecta mudanças que o Angular não percebe por ele mesmo.
-  ngOnDestroy: Ele é chamado antes do "destruição" dos atributos, pelo Angular.
-  ngAfterContentInit: Responde após o Angular transmitir o conteúdo do componente pra View.
-  ngAfterContentChecked: Responde após o Angular checar o conteúdo projetado no componente.
-  ngAfterViewInit: Responde após o Angular inicializar a view do componente e dos componentes filhos.
-  ngAfterViewChecked: Responde após o Angular checar a view do componente.
+R: 
 
 ### b) Neste projeto, estamos usando os componentes gráficos da versão 4 da biblioteca gráfica do Ionic. Nesta versão, os componentes são Web Components. Explique o que são Web Components e explique quais são as vantagens deles.
-R: São um conjunto de api da plataforma web que te deixam customizar o estilo do site através das tags HTML, passando os nomes das tag e quando quer customizá-las basta adicionar algumas propriedades. Elas não dependem de nenhum framework, funcionam em todas as plataformas e são fáceis de implementar e de customizar, ajudando em um projeto que possui vários dev's atuando.
+R: 
 
 ### c) Para que serve a tag ngFor do angular?
-R: É uma tag que serve para fazer a iteração da tags e dos seus conteúdos.
+R:
 
 
 ### d) O que o codigo abaixo representa no arquivo list.page.ts?
 `legends: Array<string> = []`
-R: É uma declaração de variável do typescript, tipado.
+R
 
 ### e) Como funciona a api Events do Ionic? Para que serve?
 R: 
 
 ### f) O que é flexbox? Para que servem as tags ion-grid, ion-row, ion-col? Quais as vantagens em utilizálas?
-R: É um layout responsivo de caixas do CSS. 
+R: 
 
 ## Angular Questão 6:
 
