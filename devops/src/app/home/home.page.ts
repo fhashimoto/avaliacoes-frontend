@@ -29,7 +29,6 @@ export class HomePage {
         // Adicionado o this. pois a função está no escopo da classe
         this.dismissLoading();
       } catch(err) {
-        console.error(err);
         alert('Error dismissing loader');
       }
       
