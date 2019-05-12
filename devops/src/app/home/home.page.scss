@@ -1,1 +1,12 @@
-
+img{
+  border: 1px solid black; 
+  min-width: 300px !important; 
+  min-height: 300px !important; 
+  margin: 5px 10px;
+}
+.container{
+  display:flex; 
+  flex-wrap: wrap; 
+  justify-content: space-around;
+  align-content: space-around;
+}
