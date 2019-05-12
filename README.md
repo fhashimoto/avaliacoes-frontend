@@ -57,19 +57,24 @@ R: É um layout responsivo de caixas do CSS. Essas tags são a representação d
 ## Angular Questão 6:
 
 ### a) Quais foram os problemas que você identificou?
-R:
+R: Existiam erros de digitação e faltou atribuir o this. para uma função, o que não permetia o app compilar. A página demora muito para recarregar, a primeira página demora 3s e algumas imagens demoravam 800ms, com requisições assíncronas, o que somava para o tempo final de carregamento. Em tamanhos de telas diferentes, a quarta imagem ficava fora do padrão, isso devia à implementação do grid do ionic, quando tinham path de imagens inexistentes, aparecia um link de 404, o que torna a experiência do usuário ruim.
 
 ### b) Ordene os problemas por ordem de criticidade, ou seja, liste todos os problemas encontrados na ordem de quais deveriam ser corrigidos primeiro em um cenário onde devessemos priorizar as correções.
-R:
+R: 1: Typos e atribução: Extremamente simples, resolvido em segundos.
+  2: Juntar as imagens em Sprite, para que exista apenas uma solicitação para o servidor, aumentando a velocidade do site, e se for o caso, pode evitar imagens repetidas.
+  3: Melhor estruturar o HTML, utilizar tag img que possui eventos úteis.
+  4: Configurar o flex-box de forma manual, pois o ionic não possui um uso bom de flexbox para este caso.
+  5: Se 2. não for implementado, ou durante a implementação do 2. chamar uma imagem "padrão" no evento de erro de carregamento da imagem.
+  6: Retirada de funções desnecessárias e de log's desnecessários.
 
 ### c) Justifique a ordem proposta no item anterior em termos de impacto para os usuários e dificuldade para corrigir o problema.
-R: 
+R: Pela complexidade do problema e também para o benefício que irá trazer para o usuário, mesmo o 2. sendo o mais complexo, ele irá trazer o maior benefício para o app, e o 1. pode ser reolvido em segundos, então fazendo uma análise complexidade/tempo, eu cheguei na conclusão dessa ordem.
 
 ### d) Para que servem os comandos async e await, encontrados na função presentLoading do arquivo home.page.ts?
-R:
+R: O async indica se uma função deve rodar de forma assíncrona, que é diferente do padrão JS, que funciona de forma síncrona, então o programa irá esperar o comando que tiver a tag await dentro da função async, ter um callback, para dar continuidade ao código.
 
 ### e) Quais as vantagens de utilizar async/await em códigos javascript/typescript?
-R:
+R: Quando temos uma dependência por exemplo de uma chamada de API, onde a função, ou variável só irá existir após a conclusão da chamada, e outras funções são dependentes dela para funcionar corretamente.
 
 ### f) Explique para que serve a seguinte lib encontrada no arquivo home.page.ts import * as _ from 'lodash';
-R:
+R: O símbolo * significa que está importando tudo, como "_" da biblioteca lodash, ou seja, para usar os módulos do lodash nós chamamos com _. Essa é uma biblioteca que facilita a nossa manipulação e iteração de arrays, objetos e string, é uma auxiliadora para o nosso desenvolvimento.
