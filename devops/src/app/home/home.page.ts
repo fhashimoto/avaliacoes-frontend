@@ -19,10 +19,9 @@ export class HomePage {
   }
 
   ngOnInit() {
-    this.printOnConsole();
+    // Desnecessário
+    // this.printOnConsole();
     this.presentLoading();
-
-
     this.randomPhotos();
 
     setTimeout( () => {
@@ -55,9 +54,10 @@ export class HomePage {
     return await this.loading.present();
   }
 
-  printOnConsole() {
-    console.log('Running a public function on init');
-  }
+  // Função desnecessária chamada apenas para logar
+  // printOnConsole() {
+  //   console.log('Running a public function on init');
+  // }
 
   dismissLoading() {
     if (!_.isNil(this.loading)) {
