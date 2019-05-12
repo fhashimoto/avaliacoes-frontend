@@ -48,7 +48,8 @@ export class HomePage {
   async presentLoading() {
     this.loading = await this.loadingController.create({
       spinner: 'dots',
-      message: 'Please wait...'
+      message: 'Please wait...',
+      duration: 3000
     });
     return await this.loading.present();
   }
@@ -62,5 +63,8 @@ export class HomePage {
     if (!_.isNil(this.loading)) {
       this.loading.dismiss();
     }
+  }
+  trackByFn(index,photo){
+    return index;
   }
 }
