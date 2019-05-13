@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <title>Minha Farmácia</title>
 </head>
 <body style="margin:0; font-family: Arial, Helvetica, sans-serif">
 
+  <!-- HEADER -->
   <header style="
     background-color:#2b324f; 
     padding: 25px; 
@@ -35,7 +37,8 @@
       <div class="seta baixo" style="margin-bottom:7px"></div>
     </div>
   </header>
-
+  <!-- FINAL HEADER -->
+  <!-- SUB-HEADER -->
   <div style="background-color:#494f68; padding: 20px; display: flex;justify-content:center; color: white; font-size: .9em">
     <div style="position:absolute; left: 15px">
       <div class="seta esquerda" style="margin: 0 10px 0 20px"></div> VOLTAR
@@ -44,21 +47,100 @@
       PROMOÇÃO SORTE GRANDE
     </div>
   </div>
-
+  <!-- FINAL SUB HEADER -->
+  <!-- BANNER -->
   <div style="display:flex; justify-content:center; color: whitesmoke; background-image: linear-gradient(to right,#698fab,#115c93,#698fab)">
     <div style="text-align:center; width: 350px; padding: 40px 0;">
-
       <div style="font-size:2em; text-align: justify; font-weight: bold; margin-bottom: 20px">Participe da promo&ccedil;&atilde;o e ganhe pr&ecirc;mios&#33;</div>
-
       <div style="display: flex;">
         <input class="promo" placeholder="&#9744;  Digite seu c&oacute;digo">
         <button><span style="padding:0 3px; font-size: .9em; color: whitesmoke">VALIDAR</span> <div class="seta direita"></div></button>
       </div>
-
       <div class="invalido">C&oacute;digo Inv&aacute;lido</div>
-
     </div>
   </div>
+  <!-- FINAL BANNER -->
+  <!-- CORPO CARDS -->
+  <div style="background-color:#eeeeee">
+    <div style="display:flex; justify-content:space-between; width: 90%; margin: 0 auto; padding: 25px 0 50px 0">
+
+      <div style="display:flex; flex-direction:column; width: 275px; padding: 20px 15px">
+        <a href="#">Como participar <i class="fas fa-chevron-right" style="float:right"></i></a>
+        <a href="#">Regulamento <i class="fas fa-chevron-right" style="float:right"></i></a>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap">
+
+          <div class="card">
+            <div class="underline"><span>SORTEIO XPTO</span></div>
+            <div style="padding-top:10px; display: flex; flex-direction: column; align-items: baseline">
+              <div>
+                <i class="fas fa-gift"></i> <span style="padding-left:10px; font-size: 1.3em">14 Pr&#234;mios</span>
+              </div>
+              <div style="margin-bottom:15px; display: flex; align-items: center">
+                <i class="fas fa-calendar-alt"></i> <div style="font-size:.8em; padding-left:15px; width: 75%">Sorteio será realizado dia 15/10/20</div>
+              </div>
+              <div style="display:flex; align-items: center; border: whitesmoke 1px solid; padding: 15px; border-radius: 10px">
+                <div style="padding-right:7px">Você está participando com <span style="font-weight: bold; font-size:1.2em">15 números</span></div>
+                <i class="fas fa-chevron-right" style="font-size: 1.2em"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="underline"><span>SORTEIO XPTO 2</span></div>
+            <div style="padding-top:10px; display: flex; flex-direction: column; align-items: baseline">
+              <div>
+                <i class="fas fa-gift"></i> <span style="padding-left:10px; font-size: 1.3em">1 Casa</span>
+              </div>
+              <div style="margin-bottom:15px; display: flex; align-items: center">
+                <i class="fas fa-calendar-alt"></i> <div style="font-size:.8em; padding-left:15px; width: 75%">Sorteio será realizado dia 15/10/20</div>
+              </div>
+              <div style="display:flex; flex-direction: column; align-items: center; width: 100%; height: 81px;">
+                <div class="line"></div>
+                <div style="text-align: center; position: absolute; bottom: 175px">
+                  <div style="font-weight: 100">Você não está participando</div>
+                  <a href="#" style="color:whitesmoke; text-decoration: underline; margin:0">Saiba como participar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="underline"><span>SORTEIO XPTO</span></div>
+            <div style="padding-top:10px; display: flex; flex-direction: column; align-items: baseline">
+              <div>
+                <i class="fas fa-gift"></i> <span style="padding-left:10px; font-size: 1.3em">14 Pr&#234;mios</span>
+              </div>
+              <div style="margin-bottom:15px; display: flex; align-items: center">
+                <i class="fas fa-calendar-alt"></i> <div style="font-size:.8em; padding-left:15px; width: 75%">Sorteio será realizado dia 15/10/20</div>
+              </div>
+              <div style="display:flex; align-items: center; border: whitesmoke 1px solid; padding: 15px; border-radius: 10px">
+                <div style="padding-right:7px">Você está participando com <span style="font-weight: bold; font-size:1.2em">15 números</span></div>
+                <i class="fas fa-chevron-right" style="font-size: 1.2em"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="underline"><span>SORTEIO XPTO</span></div>
+            <div style="padding-top:10px; display: flex; flex-direction: column; align-items: baseline">
+              <div>
+                <i class="fas fa-gift"></i> <span style="padding-left:10px; font-size: 1.3em">14 Pr&#234;mios</span>
+              </div>
+              <div style="margin-bottom:15px; display: flex; align-items: center">
+                <i class="fas fa-calendar-alt"></i> <div style="font-size:.8em; padding-left:15px; width: 75%">Sorteio será realizado dia 15/10/20</div>
+              </div>
+              <div style="display:flex; align-items: center; border: whitesmoke 1px solid; padding: 15px; border-radius: 10px">
+                <div style="padding-right:7px">Você está participando com <span style="font-weight: bold; font-size:1.2em">15 números</span></div>
+                <i class="fas fa-chevron-right" style="font-size: 1.2em"></i>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- FINAL CORPO CARDS -->
 
 </body>
 </html>

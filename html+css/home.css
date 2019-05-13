@@ -30,6 +30,13 @@
   padding: 2.5px;
   transform: rotate(-45deg);
 }
+.seta.direita.azul{
+  border: solid #2b324f; 
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 10px;
+}
 
 .fotoPerfil{
   width: 40px;
@@ -72,4 +79,44 @@ input.promo{
   text-align: left;
   font-size: .75em;
   border-radius: 6px;
+}
+
+a{
+  text-decoration:none; 
+  color:#2b324f;
+  margin-bottom: 30px;
+}
+
+.card{
+  color:whitesmoke;
+  background-color: #2b324f;
+  width: 250px;
+  padding: 25px 20px;
+  margin: 15px;
+  border-radius: 10px;
+}
+.card i{
+  padding: 15px 0;
+  font-size: 2em;
+}
+
+.underline{
+  color: whitesmoke;
+  position: relative;
+  padding-bottom: 7px;
+}
+.underline::after{
+  content: '';
+  height: 3px;
+  width: 25%;
+  background: #8dc63f;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.line{
+  height: 1px;
+  width: 30px;
+  background: gray;
 }
